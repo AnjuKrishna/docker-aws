@@ -1,0 +1,23 @@
+---
+  # Launch the docker template.
+- name: launch dockerswarm using cloudformation
+  cloudformation:
+    stack_name: "{{ stack_name }}"
+    state: "present"
+    region: "{{ region }}"
+    disable_rollback: true
+    template_url:  https://editions-us-east-1.s3.amazonaws.com/aws/stable/Docker.tmpl
+    template_parameters:
+      EnableCloudStorEfs: "yes"
+      KeyName: "{{ KeyName }}"
+      EnableCloudWatchLogs: "{{ EnableCloudWatchLogs }}"
+      EnableSystemPrune: "{{ EnableSystemPrune }}"
+      InstanceType: "{{ InstanceType }}"
+      ManagerDiskSize: "{{ ManagerDiskSize }}"
+      ManagerDiskType: "{{ ManagerDiskType }}"
+      ManagerInstanceType: "{{ ManagerInstanceType }}"
+      ManagerSize: "{{ ManagerSize }}"
+      WorkerDiskSize: "{{ WorkerDiskSize }}"
+      WorkerDiskType: "{{ WorkerDiskType }}"
+
+

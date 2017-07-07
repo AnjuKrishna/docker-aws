@@ -1,0 +1,15 @@
+---
+# defaults file for docker-on-aws
+ClusterSize:  5
+EnableCloudWatchLogs:  yes 
+EnableSystemPrune:  no
+InstanceType:  t2.micro
+KeyName:  thisKey.pem
+ManagerDiskSize:  20
+ManagerDiskType:  standard
+ManagerInstanceType:  t2.micro
+ManagerSize:  3
+WorkerDiskSize:  20
+WorkerDiskType:  standard
+stack_name:  journals
+region:  us-east-2
